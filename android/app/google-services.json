@@ -1,0 +1,105 @@
+{
+  "project_info": {
+    "project_number": "29621247550",
+    "project_id": "waiterapp-c047a",
+    "storage_bucket": "waiterapp-c047a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29621247550:android:097500ab4a21dfcb1fbb6f",
+        "android_client_info": {
+          "package_name": "com.example.waiterapp_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29621247550-2te8ubq0l3806mqnggic28tsf5rvsi1d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA43UvSmK5MKrvxVgynyGRxRV9oUY4iMC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29621247550-2te8ubq0l3806mqnggic28tsf5rvsi1d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29621247550:android:3e6bffc3998e000d1fbb6f",
+        "android_client_info": {
+          "package_name": "com.example.waiterapp_admin_v5"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29621247550-2te8ubq0l3806mqnggic28tsf5rvsi1d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA43UvSmK5MKrvxVgynyGRxRV9oUY4iMC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29621247550-2te8ubq0l3806mqnggic28tsf5rvsi1d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29621247550:android:c46dae21d024b6231fbb6f",
+        "android_client_info": {
+          "package_name": "com.example.waiterapp_admin_v6"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29621247550-oddsmtce36r2m26b9b2verdjfbh6vq65.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.waiterapp_admin_v6",
+            "certificate_hash": "7159f76ff8e7bc9ccc1453f2670adce986861c9f"
+          }
+        },
+        {
+          "client_id": "29621247550-2te8ubq0l3806mqnggic28tsf5rvsi1d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA43UvSmK5MKrvxVgynyGRxRV9oUY4iMC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29621247550-2te8ubq0l3806mqnggic28tsf5rvsi1d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
