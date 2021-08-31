@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:waiterapp_admin_v6/src/ui/form_products_screen.dart';
@@ -68,7 +70,7 @@ class ProductScreen extends StatelessWidget {
     );
   }
 
-  Widget _productoItem(String nombre, String precio, String imagen) {
+  Widget _productoItem(String nombre, Double precio, String imagen) {
     return Padding(
       padding: EdgeInsets.all(3.0),
       child: Container(
@@ -113,7 +115,7 @@ class ProductScreen extends StatelessWidget {
                 padding: EdgeInsets.all(3.0),
               ),
               Text(
-                precio,
+                precio.toString(),
                 style: new TextStyle(
                     color: Colors.black,
                     fontSize: 20.0,

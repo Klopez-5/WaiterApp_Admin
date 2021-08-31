@@ -7,6 +7,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:waiterapp_admin_v6/src/bloc/auth_cubit.dart';
 import 'package:waiterapp_admin_v6/src/ui/clients_screen.dart';
 import 'package:waiterapp_admin_v6/src/ui/products_screen.dart';
+import 'package:waiterapp_admin_v6/src/ui/stadist2_screen.dart';
+import 'package:waiterapp_admin_v6/src/ui/stadist_screen.dart';
 //import 'package:waiterapp_admin_v6/src/repository/auth_repository.dart';
 import 'package:waiterapp_admin_v6/src/widgets/side_bar_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -159,7 +161,7 @@ class HomeScreen extends StatelessWidget {
                                                       context,
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              ProductScreen()),
+                                                              StadistScreem()),
                                                     );
                                                   },
                                                   child: Image.asset(
@@ -259,7 +261,7 @@ class HomeScreen extends StatelessWidget {
                                                       context,
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              ProductScreen()),
+                                                              Stadist2Screen()),
                                                     );
                                                   },
                                                   child: Image.asset(
@@ -276,7 +278,7 @@ class HomeScreen extends StatelessWidget {
                                             padding: EdgeInsets.all(3.0),
                                           ),
                                           Text(
-                                            'Empleados',
+                                            'Ventas 2.0',
                                             style: TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 25.0,

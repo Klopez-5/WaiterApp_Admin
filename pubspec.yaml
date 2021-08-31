@@ -49,6 +49,8 @@ dependencies:
   # https://pub.dev/packages/cached_network_image
   cached_network_image: ^3.0.0
   carousel_slider: ^4.0.0
+  syncfusion_flutter_charts: ^19.1.67
+  charts_flutter: ^0.10.0
 
 dev_dependencies:
   flutter_test:
