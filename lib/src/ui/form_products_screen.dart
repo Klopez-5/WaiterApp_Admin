@@ -15,6 +15,7 @@ class FormProductScreen extends StatelessWidget {
   final nombreController = TextEditingController();
   final precioController = TextEditingController();
   final descripcionController = TextEditingController();
+  final cantidadController = TextEditingController();
   final categoriaController = TextEditingController();
 
   String? emptyValidator(String? value) {
@@ -73,6 +74,12 @@ class FormProductScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 15),
                   TextFormField(
+                    controller: cantidadController,
+                    decoration: InputDecoration(labelText: 'Cantidad'),
+                    validator: emptyValidator,
+                  ),
+                  SizedBox(height: 15),
+                  TextFormField(
                     controller: categoriaController,
                     decoration: InputDecoration(labelText: 'Categoria'),
                     validator: emptyValidator,
@@ -90,7 +97,8 @@ class FormProductScreen extends StatelessWidget {
             productos.add({
               'nombre': nombreController.text,
               'descripcion': descripcionController.text,
-              'precio': precioController.text,
+              'precio': precioController.value,
+              'cantidad': cantidadController.value,
               'categoria': categoriaController.text,
               'imagen': '-----',
             });

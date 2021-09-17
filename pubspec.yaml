@@ -51,6 +51,8 @@ dependencies:
   carousel_slider: ^4.0.0
   syncfusion_flutter_charts: ^19.1.67
   charts_flutter: ^0.10.0
+  firebase_messaging: ^9.1.4
+
 
 dev_dependencies:
   flutter_test:

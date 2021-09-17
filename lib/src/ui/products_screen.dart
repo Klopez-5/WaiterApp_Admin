@@ -46,7 +46,7 @@ class ProductScreen extends StatelessWidget {
                         childAspectRatio: 0.700,
                         children: <Widget>[
                           _productoItem(productos['nombre'],
-                              productos['precio'], 'assets/add_1.png'),
+                              productos['cantidad'], 'assets/add_1.png'),
                         ],
                       ),
                     ),
@@ -70,8 +70,43 @@ class ProductScreen extends StatelessWidget {
     );
   }
 
-  Widget _productoItem(String nombre, Double precio, String imagen) {
-    return Padding(
+  Widget _productoItem(String nombre, int cantidad, String imagen) {
+    return ListTile(
+      leading: Icon(
+        Icons.view_in_ar_rounded,
+        size: 32.0,
+      ),
+      title: Text(
+        "$nombre",
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+      ),
+      subtitle: Text(
+        "Cantidad: $cantidad",
+        style: TextStyle(
+          fontSize: 16.0,
+          color: Colors.blueGrey,
+        ),
+      ),
+      trailing: Container(
+        decoration: BoxDecoration(
+          color: Colors.blueAccent.withOpacity(0.2),
+          borderRadius: BorderRadius.circular(5.0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            "\$$cantidad",
+            style: TextStyle(
+              color: Colors.blueAccent,
+              fontWeight: FontWeight.w500,
+              fontSize: 16.0,
+            ),
+          ),
+        ),
+      ),
+    );
+
+    /*return Padding(
       padding: EdgeInsets.all(3.0),
       child: Container(
         child: Card(
@@ -115,7 +150,7 @@ class ProductScreen extends StatelessWidget {
                 padding: EdgeInsets.all(3.0),
               ),
               Text(
-                precio.toString(),
+                "\$$cantidad",
                 style: new TextStyle(
                     color: Colors.black,
                     fontSize: 20.0,
@@ -125,6 +160,6 @@ class ProductScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
+    );*/
   }
 }

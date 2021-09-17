@@ -278,7 +278,7 @@ class HomeScreen extends StatelessWidget {
                                             padding: EdgeInsets.all(3.0),
                                           ),
                                           Text(
-                                            'Ventas 2.0',
+                                            'Estadisticas',
                                             style: TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 25.0,

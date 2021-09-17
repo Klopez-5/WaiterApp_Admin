@@ -75,82 +75,38 @@ class ClientScreen extends StatelessWidget {
   }
 
   Widget _clienteItem(String nombre, String apellido, String cedula,
-      int telefono, String direccion, String email) {
-    return Padding(
-      padding: EdgeInsets.all(3.0),
-      child: Container(
-        child: Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-          color: Color(0xFFE6E4EB),
-          elevation: 4,
-          child: Column(
-            children: <Widget>[
-              Center(
-                child: Material(
-                  child: Container(
-                    color: Color(0xFFE6E4EB),
-                    /* child: InkWell(
-                        onTap: () => Navigator.of(context).push(
-                            new MaterialPageRoute(
-                                builder: (context) => FormProductScreen(
-                                    nombre: nombre,
-                                    precio: precio,
-                                    imagen: imagen))),*/
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(3.0),
-              ),
-              Text(
-                "$nombre $apellido",
-                style: new TextStyle(
-                    color: Colors.black,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold),
-              ),
-              Padding(
-                padding: EdgeInsets.all(3.0),
-              ),
-              Text(
-                cedula,
-                style: new TextStyle(
-                    color: Colors.black,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold),
-              ),
-              Padding(
-                padding: EdgeInsets.all(3.0),
-              ),
-              Text(
-                direccion,
-                style: new TextStyle(
-                    color: Colors.black,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold),
-              ),
-              Padding(
-                padding: EdgeInsets.all(3.0),
-              ),
-              Text(
-                email,
-                style: new TextStyle(
-                    color: Colors.black,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold),
-              ),
-              Padding(
-                padding: EdgeInsets.all(3.0),
-              ),
-              Text(
-                telefono.toString(),
-                style: new TextStyle(
-                    color: Colors.black,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold),
-              ),
-            ],
+      String telefono, String direccion, String email) {
+    return ListTile(
+      tileColor: Color(0xFFE6E4EB),
+      leading: Icon(
+        Icons.account_circle,
+        size: 40.0,
+      ),
+      title: Text(
+        "$nombre $apellido",
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+      ),
+      subtitle: Text(
+        "$email",
+        style: TextStyle(
+          fontSize: 16.0,
+          color: Colors.blueGrey,
+        ),
+      ),
+      trailing: Container(
+        decoration: BoxDecoration(
+          color: Colors.blueAccent.withOpacity(0.2),
+          borderRadius: BorderRadius.circular(5.0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            "$cedula",
+            style: TextStyle(
+              color: Colors.blueAccent,
+              fontWeight: FontWeight.w500,
+              fontSize: 16.0,
+            ),
           ),
         ),
       ),

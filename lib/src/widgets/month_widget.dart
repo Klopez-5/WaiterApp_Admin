@@ -8,8 +8,9 @@ class MonthWidget extends StatefulWidget {
   final List<DocumentSnapshot> documents;
   final double total;
   final List<double> perDay;
-  final Map<String, double> categories;
-  final Map<String, double> mesas;
+  final Map<int, double> categories;
+  final Map<int, int> fecha_mes;
+  final Map<int, int> fecha_anio;
   //final List<double> valores;
 
   MonthWidget({Key? key, required this.documents})
@@ -20,18 +21,19 @@ class MonthWidget extends StatefulWidget {
               .map((doc) => doc['total'])
               .fold(0.0, (a, b) => a + b);
         }),
-        categories = documents.fold({}, (Map<String, double> map, document) {
-          if (!map.containsKey(document['id_client'])) {
-            map[document['id_client']] = 0.0;
+        categories = documents.fold({}, (Map<int, double> map, document) {
+          if (!map.containsKey(document['day'])) {
+            map[document['day']] = 0.0;
           }
-          map[document['id_client']] = document['total'];
+          map[document['day']] = (map[document['day']]! + document['total']);
           return map;
         }),
-        mesas = documents.fold({}, (Map<String, double> map, document) {
-          if (!map.containsKey(document['mesa'])) {
-            map[document['mesa']] = 0.0;
-          }
-          map[document['mesa']] = document['total'];
+        fecha_mes = documents.fold({}, (Map<int, int> map, document) {
+          map[document['day']] = document['month'];
+          return map;
+        }),
+        fecha_anio = documents.fold({}, (Map<int, int> map, document) {
+          map[document['day']] = document['year'];
           return map;
         }),
         //valores = documents.where((doc) => doc['day']).map((doc) => doc['total'])),
@@ -91,18 +93,19 @@ class _MonthWidgetState extends State<MonthWidget> {
     );
   }
 
-  Widget _item(IconData icon, String name, String mesa, double value) {
+  Widget _item(
+      IconData icon, int dia, int mes, int anio, double value, double percent) {
     return ListTile(
       leading: Icon(
         icon,
         size: 32.0,
       ),
       title: Text(
-        "Factura: 00/08/2021",
+        "Factura: $dia/$mes/$anio",
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
       ),
       subtitle: Text(
-        "Mesa: $mesa",
+        "Representa el: ${percent.toStringAsFixed(2)}%",
         style: TextStyle(
           fontSize: 16.0,
           color: Colors.blueGrey,
@@ -116,7 +119,7 @@ class _MonthWidgetState extends State<MonthWidget> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            "\$$value",
+            "\$${value.toStringAsFixed(2)}",
             style: TextStyle(
               color: Colors.blueAccent,
               fontWeight: FontWeight.w500,
@@ -133,12 +136,12 @@ class _MonthWidgetState extends State<MonthWidget> {
       child: ListView.separated(
         itemCount: widget.categories.keys.length,
         itemBuilder: (BuildContext context, int index) {
-          var key = widget.categories.keys.elementAt(index);
-          var mesak = widget.mesas.keys.elementAt(index);
-          var data = widget.categories[key];
-          //var day1 = widget.mesas[key];
-          return _item(
-              Icons.shopping_cart, key, mesak, data!); //Revisar envia datos
+          var day = widget.categories.keys.elementAt(index);
+          var data = widget.categories[day];
+          var mes = widget.fecha_mes[day];
+          var anio = widget.fecha_anio[day];
+          return _item(Icons.shopping_cart, day, mes!, anio!, data!,
+              100 * data / widget.total); //Revisar envia datos
         },
         separatorBuilder: (BuildContext context, int index) {
           return Container(

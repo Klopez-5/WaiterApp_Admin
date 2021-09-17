@@ -20,7 +20,7 @@ class Stadist2Screen extends StatefulWidget {
 
 class _Stadist2ScreenState extends State<Stadist2Screen> {
   late PageController _controller;
-  int currentPage = 7;
+  int currentPage = 8;
   late Stream<QuerySnapshot> _query;
 
   @override
